@@ -53,3 +53,12 @@
 * ```git log -(commit)``` : This will show the last commits that are specified with number of the commit that we have done in our repo with time, date, and commit message.
 
 * ```git log -S <string>``` : This finds commits which are add or remove a specific string in our repo. Here -S stands for “pickaxe search” means it looks for changes that are introduced or removed a specific text in any commit.
+
+* ```git bisect``` : it used to find the exact commit that introduced a bug into the code. This uses binary search to find the bug efficiently. Instead of checking every commit linearly, it cuts the search space in half each time.
+   *  If the middle commit is bad, it will only look at the earlier half (between good and middle).
+   * If the middle commit is good, it will only look at the later half (between middle and bad).
+   * ```git bisect bad ``` ,  This will lets us know about the commit which is bad. simillarly ```git bisect good```for good, we are asking or telling git to find out which is good commit.
+   * ```git bisect bad HEAD``` : we are marking the latest commit as "bad" to start the bisect process.
+   * ```git bisect good 1.0 ```: we are telling git that the commit tagged 1.0 is good. so that it will check the commits and tells us the first bad commit effeciently.
+   * ```git bisect run sh -c "<command>"``` : It is used to automate the bug test with the given comand while bisect.
+* ```grep -v <word>``` : it shows all lines that do not match the pattern. usually grep shows lines that match the pattern.
