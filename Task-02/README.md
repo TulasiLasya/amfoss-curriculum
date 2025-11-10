@@ -5,3 +5,4 @@ I have made this document with the reference of [this](https://exinfm.com/traini
 
 #### Outcomes:
 I had came to know that how to create a SRS document, that too for before creating any aplication and made me to think in overall development for the application.
+The SRS Document is in DOC Folder 
