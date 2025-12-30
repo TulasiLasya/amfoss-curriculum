@@ -1,0 +1,20 @@
+.btn-box {
+  display: flex;
+  gap: 200px;
+}
+
+.box2 {
+  background: linear-gradient(180deg, rgb(241, 201, 187), rgb(242, 53, 148));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}

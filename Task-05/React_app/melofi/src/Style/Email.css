@@ -1,0 +1,12 @@
+.id {
+  width: 500px;
+  height: 30px;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

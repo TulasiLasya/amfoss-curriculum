@@ -1,0 +1,8 @@
+.Btn {
+  width: 150px;
+  height: 50px;
+  background: white;
+  outline: none;
+  border-radius: 25px;
+  font-display: white;
+}

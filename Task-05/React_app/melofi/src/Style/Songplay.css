@@ -1,0 +1,56 @@
+.details {
+  font-size: small;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.play-box {
+  background-color: black;
+  height: 100vh;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.design1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+}
+
+.icon {
+  color: white;
+  font-size: 20px;
+}
+
+.cover {
+  height: 300px;
+  width: 300px;
+  background-color: grey;
+  border-radius: 30px;
+}
+
+.music-box {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.design2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

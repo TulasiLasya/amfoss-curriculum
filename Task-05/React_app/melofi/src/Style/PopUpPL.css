@@ -1,0 +1,14 @@
+.add-box {
+  background: black;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  font-display: white;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
