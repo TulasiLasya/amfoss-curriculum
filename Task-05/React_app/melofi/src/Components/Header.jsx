@@ -7,7 +7,7 @@ function Header() {
       <div className="head">
         <img src={music} alt="Logo" width="50" height="50"></img>
         <div className="heading">
-          <h4 className="jua-regular">Melofi</h4>
+          <h4 className="jua-regular">MeloFi</h4>
         </div>
       </div>
     </>

@@ -5,10 +5,10 @@ function Menu() {
         <h5>Profile</h5>
         <h5>Create Playlist</h5>
         <h5>
-          <a>LogOut</a>
+          <Link to="/">Logout</Link>
         </h5>
         <h5>
-          <a>Reset Password</a>
+          <Link to="/Resetpage">Reset Password</Link>
         </h5>
       </div>
     </>
