@@ -2,7 +2,7 @@ function Searchbar() {
   return (
     <>
       <div>
-        <input type="text" placeholder="Search" class="search-input"></input>
+        <input type="text" placeholder="Search" className="search-input"></input>
       </div>
     </>
   );

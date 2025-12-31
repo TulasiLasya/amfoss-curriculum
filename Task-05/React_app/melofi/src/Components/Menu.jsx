@@ -1,7 +1,7 @@
 function Menu() {
   return (
     <>
-      <div class="menu">
+      <div className="menu">
         <h5>Profile</h5>
         <h5>Create Playlist</h5>
         <h5>

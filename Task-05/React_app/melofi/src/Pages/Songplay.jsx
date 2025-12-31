@@ -23,8 +23,8 @@ function SongPlay() {
         </div>
         <br />
 
-        <p class="details">Song Name</p>
-        <p class="details">About song</p>
+        <p className="details">Song Name</p>
+        <p className="details">About song</p>
 
         <div className="design1">
           <LikeIcon />

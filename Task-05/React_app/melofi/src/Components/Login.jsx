@@ -1,7 +1,7 @@
 import "../Style/Login.css";
 function Login() {
   return (
-    <div class="loginContainer">
+    <div className="loginContainer">
       <button>Login</button>
     </div>
   );

@@ -10,11 +10,11 @@ function Createpl() {
         <div>
           <Header />
         </div>
-        <div class="box2">
-          <h3 class="title">Give your Playlist name</h3>
+        <div className="box2">
+          <h3 className="title">Give your Playlist name</h3>
           <Input placeholder="Enter your playlist name" />
           <br></br>
-          <div class="btn-box">
+          <div className="btn-box">
             <Buttons name="Create" />
             <Buttons name="Cancel" />
           </div>

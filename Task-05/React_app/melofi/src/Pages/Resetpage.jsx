@@ -14,7 +14,7 @@ function Resetpage() {
       <div>
         <Header />
       </div>
-      <div class="box">
+      <div className="box">
         <h3 className="title">Reset Password</h3>
         <Email />
         <br />

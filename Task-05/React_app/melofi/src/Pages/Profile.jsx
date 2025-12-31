@@ -11,7 +11,7 @@ function Profile() {
       <div>
         <Header />
       </div>
-      <div class="box3">
+      <div className="box3">
         <img src={account} className="Profilepic" width="70" height="70"></img>
         <h3 class="title">Profile</h3>
         <br />
@@ -21,7 +21,7 @@ function Profile() {
         <br />
         <Bio />
         <br />
-        <h4 class="title">Total Time listened</h4>( Total time listened will be
+        <h4 className="title">Total Time listened</h4>( Total time listened will be
         updated when doing backend )
       </div>
     </>

@@ -14,19 +14,19 @@ function Registration() {
       <div>
         <Header />
       </div>
-      <div class="box">
-        <h3 class="title">Registration</h3>
+      <div className="box">
+        <h3 className="title">Registration</h3>
         <br></br>
         <Input placeholder="Username" />
         <br></br>
-        <div class="login-part">
+        <div className="login-part">
           <Email />
         </div>
         <br></br>
         <Password placeholder="Password" />
         <br></br>
         <Button name="Sign Up" onClick={() => navigate("/")} />
-        <h4 class="title">
+        <h4 className="title">
           Already had account? <Link to="/">Login</Link>
         </h4>
       </div>

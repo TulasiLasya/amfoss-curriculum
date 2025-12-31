@@ -2,7 +2,7 @@ import "../Style/Email.css";
 function Email() {
   return (
     <form>
-      <label class="label">
+      <label className="label">
         <input type="Email" class="id" required placeholder="Email Id"></input>
       </label>
     </form>
