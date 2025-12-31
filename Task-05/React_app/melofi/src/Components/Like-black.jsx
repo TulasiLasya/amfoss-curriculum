@@ -8,8 +8,8 @@ function LikeIcon() {
     setLiked(!liked);
   };
   if (liked)
-    return <AiFillLike color="white" size="25" onClick={handleClicked} />;
-  return <AiOutlineLike color="white" size="25" onClick={handleClicked} />;
+    return <AiFillLike color="black" size="25" onClick={handleClicked} />;
+  return <AiOutlineLike color="black"size="25" onClick={handleClicked} />;
 }
 
 export default LikeIcon;

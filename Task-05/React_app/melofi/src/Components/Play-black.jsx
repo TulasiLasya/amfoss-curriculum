@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { FiPlay } from "react-icons/fi";
 import { FiPause } from "react-icons/fi";
-import "../Style/Play.css"
 
-function Play(){
+function Playblack(){
     const [played , setplayed] = useState(false);
     const handleClicked = () => {
         setplayed(!played);
 
     };
     if(played) 
-        return <FiPause onClick={handleClicked} className="color"/>
-    return <FiPlay onClick={handleClicked} className="color"/>
+        return <FiPause onClick={handleClicked} color="black"/>
+    return <FiPlay onClick={handleClicked} color="black"/>
 }
 
-export default Play;
+export default Playblack;

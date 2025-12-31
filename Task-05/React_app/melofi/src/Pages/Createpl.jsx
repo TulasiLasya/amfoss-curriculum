@@ -3,23 +3,25 @@ import Buttons from "../Components/Buttons";
 import Input from "../Components/Inputs";
 import Header from "../Components/Header";
 import "../Style/Createpl.css";
+import Menu from "../Components/Menu";
 
 function Createpl() {
   return (
-      <>
-        <div>
-          <Header />
+    <>
+      <div>
+        <Header />
+      </div>
+      <div className="box2">
+        <h3 className="title">Give your Playlist name</h3>
+        <Input placeholder="Enter your playlist name" />
+        <br></br>
+        <div className="btn-box">
+          <Buttons name="Create" />
+          <Buttons name="Cancel" />
         </div>
-        <div className="box2">
-          <h3 className="title">Give your Playlist name</h3>
-          <Input placeholder="Enter your playlist name" />
-          <br></br>
-          <div className="btn-box">
-            <Buttons name="Create" />
-            <Buttons name="Cancel" />
-          </div>
-        </div>
-      </>
+        <Menu/>
+      </div>
+    </>
   );
 }
 

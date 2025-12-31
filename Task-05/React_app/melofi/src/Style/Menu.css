@@ -1,4 +1,15 @@
 .menu {
-  width: 360px;
-  height: 1430px;
+  width: 230px;
+  height: 600px;
+  padding: 10px;
+  background-color: black;
+
+}
+
+.no-decor {
+  text-decoration: none;
+  color: inherit;
+  font-family: arial;
+  font-size: medium;
+  color: white;
 }
