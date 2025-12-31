@@ -3,11 +3,9 @@ import Buttons from "../Components/Buttons";
 import Input from "../Components/Inputs";
 import Header from "../Components/Header";
 import "../Style/Createpl.css";
-import { IconContext } from "react-icons";
 
 function Createpl() {
   return (
-    <IconContext.Provider value={{ color: "black" }}>
       <>
         <div>
           <Header />
@@ -22,7 +20,6 @@ function Createpl() {
           </div>
         </div>
       </>
-    </IconContext.Provider>
   );
 }
 
