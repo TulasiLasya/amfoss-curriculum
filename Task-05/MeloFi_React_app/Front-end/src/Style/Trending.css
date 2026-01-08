@@ -1,0 +1,29 @@
+.songs-row {
+    display: flex;
+    flex-direction: row;
+    gap:40px;
+    overflow-x:auto;
+    padding: 10px 0;
+}
+
+.img-container{
+    width:300px;
+    height:200px;
+    object-fit:fill;
+    flex-shrink: 0;
+}
+
+.sub-heading{
+    position: sticky;
+    font-size: medium;
+    font-family: arial;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index:100;
+    padding: 10px 0;
+}
+
+.songs-row::-webkit-scrollbar{
+    display: none;
+}

@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+.head {
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  position: sticky;
+}
+
+.jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+.heading {
+  position: relative;
+  display: flex;
+  left: 52px;
+  top: -75px;
+}

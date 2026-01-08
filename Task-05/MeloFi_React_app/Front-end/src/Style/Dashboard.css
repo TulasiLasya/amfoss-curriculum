@@ -1,0 +1,18 @@
+.dbody {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex: 1;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.dashboard {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

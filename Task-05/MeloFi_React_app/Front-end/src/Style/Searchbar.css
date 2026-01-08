@@ -1,0 +1,10 @@
+.search-input{
+    width:450px;
+    height:50px;
+    border-radius: 100px;
+    background: linear-gradient(90deg, rgb(236, 173, 173), rgb(249, 117, 117));
+}
+
+/* .Search {
+    margin-left: 650px;
+} */

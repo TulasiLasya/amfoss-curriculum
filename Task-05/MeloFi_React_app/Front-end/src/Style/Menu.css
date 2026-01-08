@@ -1,0 +1,19 @@
+.menu {
+  width: 220px;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  position: sticky;
+  top:0;
+
+}
+
+.no-decor {
+  text-decoration: none;
+  color: inherit;
+  font-family: arial;
+  font-size: medium;
+  color: white;
+}
