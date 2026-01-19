@@ -10,9 +10,9 @@
   gap: 2px;
   width: 220px;
   height: 220px;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  background-color: #111;
+  background-color: black;
 }
 
 .album-cover-img {
@@ -23,11 +23,11 @@
 
 .album-title {
   margin-top: 10px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .album-subtitle {
-  font-size: 13px;
+  font-size: 20px;
   color: black;
 }

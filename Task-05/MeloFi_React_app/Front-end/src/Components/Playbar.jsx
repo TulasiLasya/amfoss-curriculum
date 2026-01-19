@@ -12,6 +12,7 @@ function Playbar() {
   return (
     <>
     <footer className="container">
+      
       <div className="container2">
         <Likeblack />
         <FiSkipBack />

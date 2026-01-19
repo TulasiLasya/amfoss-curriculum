@@ -8,7 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
-
   // states for inputs 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -55,6 +54,7 @@ function Home() {
 
         <h3 className="title">Login</h3>
 
+        
         <div className="login-part">
           <Input
             placeholder="Email"

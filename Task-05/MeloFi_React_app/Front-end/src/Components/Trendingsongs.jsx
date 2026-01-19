@@ -25,6 +25,7 @@ function Trendingsongs() {
                 songName={song.songName}
                 singer={song.singer}
                 url={song.url}
+                
               />
             ))}
           </div>

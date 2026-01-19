@@ -4,6 +4,8 @@
     gap:40px;
     overflow-x:auto;
     padding: 10px 0;
+    color: white;
+    font-family: arial;
 }
 
 .img-container{
@@ -14,6 +16,7 @@
 }
 
 .sub-heading{
+    color: white;
     position: sticky;
     font-size: medium;
     font-family: arial;

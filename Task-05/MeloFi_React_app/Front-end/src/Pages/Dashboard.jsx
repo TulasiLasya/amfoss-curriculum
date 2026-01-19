@@ -14,20 +14,11 @@ function Dashboard() {
 
       <div className="dbody">
         <Menu />
-
         <div className="content">
           <Searchbar />
           <Trendingsongs />
-
-          <Albumpage />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
         </div>
       </div>
-
       <Playbar />
     </>
   );

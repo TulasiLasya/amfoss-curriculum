@@ -17,7 +17,7 @@ function App() {
         <Route path="/Registration" element={<Registration />} />
         <Route path="/Createpl" element={<Createpl />} />
         <Route path="/Profile" element={<Profile />} />
-        <Route path="" element={<SongPlay />} />
+        <Route path="/song/:_id" element={<SongPlay />} />
         <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route path="" element={<Albums />}/> */}
         {/* <Route path="" element={<Albumpage/>}/> */}

@@ -14,14 +14,13 @@ function SongPlay() {
   return (
     <>
       <Header />
-      <br />
+
       <div className="play-box">
         <br />
         <br />
         <div className="music-box">
           <div className="cover"></div>
         </div>
-        <br />
 
         <p className="details">Song Name</p>
         <p className="details">About song</p>
