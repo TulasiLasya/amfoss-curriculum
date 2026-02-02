@@ -1,4 +1,4 @@
-package com.example.melofi
+package com.example.melofi_1
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,19 +11,30 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.melofi.ui.theme.MelofiTheme
+import com.example.melofi_1.ui.theme.MeloFi_1Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            LoginScreen()
-            //RegistrationPage()
-            //Reset()
-            //Dashboard()
-            //CreatePlaylist()
-         }
+            AppNavigation()
         }
     }
+}
 
+//@Composable
+//fun Greeting(name: String, modifier: Modifier = Modifier) {
+//    Text(
+//        text = "Hello $name!",
+//        modifier = modifier
+//    )
+//}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun GreetingPreview() {
+//    MeloFi_1Theme {
+//        Greeting("Android")
+//    }
+//}

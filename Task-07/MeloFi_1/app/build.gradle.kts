@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.melofi"
+    namespace = "com.example.melofi_1"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.melofi"
-        minSdk = 25
+        applicationId = "com.example.melofi_1"
+        minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -32,7 +32,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "11"
     }
     buildFeatures {
         compose = true
@@ -49,12 +49,10 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.compose.foundation.layout)
-    implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
-    implementation(libs.androidx.compose.navigation)
-    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.ui)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
