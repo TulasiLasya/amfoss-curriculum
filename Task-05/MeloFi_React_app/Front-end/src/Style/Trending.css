@@ -1,32 +1,32 @@
+.sub-heading{
+    color: white;
+    font-family: arial;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding-left: 10px 0;
+}
+
 .songs-row {
     display: flex;
     flex-direction: row;
-    gap:40px;
+    gap:25px;
     overflow-x:auto;
     padding: 10px 0;
     color: white;
     font-family: arial;
 }
 
+
 .img-container{
     width:300px;
     height:200px;
     object-fit:fill;
     flex-shrink: 0;
-}
-
-.sub-heading{
-    color: white;
-    position: sticky;
-    font-size: medium;
-    font-family: arial;
-    top:0;
-    left:0;
-    width: 100%;
-    z-index:100;
-    padding: 10px 0;
+    border-radius: 20px;
+    
 }
 
 .songs-row::-webkit-scrollbar{
     display: none;
 }
+

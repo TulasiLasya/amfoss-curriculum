@@ -1,9 +1,17 @@
 import "../Style/Email.css";
-function Email() {
+function Email({ value, onChange }) {
   return (
     <form>
       <label className="label">
-        <input type="Email" class="id" required placeholder="Email Id"></input>
+        <input
+          type="email"
+          value={value}
+          onChange={onChange}
+          name="email"
+          className="id"
+          required
+          placeholder="Email Id"
+        ></input>
       </label>
     </form>
   );

@@ -5,22 +5,29 @@ import Header from "../Components/Header";
 import "../Style/Home.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
 
 function Home() {
   const navigate = useNavigate();
-  // states for inputs 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const {login } = useAuth();
 
-  const handleLogin = async () => {
+
+  //  async ==> allows systems to send and recive data without waiting for an immediate responceponce.
+  const handleLogin = async (e) => {
+    e.preventDefault(); // we make the webpage not to refresh because, is the webpage refreshes then it will cuts off code before it can finish the api call.
+
     if (!email || !password) {
-      alert("Please enter email and password");
+      setError("Please enter email and password");
       return;
     }
 
     try {
-
-      const res = await fetch("http://localhost:5000/login", {
+      //  this await makes the async function to stop until the fetching finishes
+      const responce = await fetch("http://localhost:5555/login", {
         // the above link is from backend , it is usefull to check login details.(we are connecting them here)
         method: "POST",
         headers: {
@@ -29,16 +36,20 @@ function Home() {
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await res.json();
+      const data = await responce.json();
 
-      if (res.ok) {
+      if (responce.ok) {
+        login(data.user, data.token);
+        console.log("Login successful:", data);
         navigate("/dashboard");
       } else {
-        alert(data.message || "Invalid credentials");
+        setError(data.message || "Invalid credentials");
       }
-
     } catch (error) {
-      alert("Server error");
+      setError("Server error");
+      console.error("Login error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,25 +65,41 @@ function Home() {
 
         <h3 className="title">Login</h3>
 
-        
-        <div className="login-part">
-          <Input
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+        {/* style for error displaying */}
+        {error && (
+          <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>
+        )}
+        <div>
+          <form onSubmit={handleLogin} className="login-part">
+            <Input
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-          <Password
-            placeholder="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
+            <Password
+              name="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </form>
           <p className="text">
-            <Link to="/Resetpage">Forgot Password?</Link>
+            <Link
+              to="/Resetpage"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              Forgot Password?
+            </Link>
           </p>
 
-          <Buttons name="Login" onClick={handleLogin} />
+          <Buttons
+            name={loading ? "LoggingIn.." : "Login"}
+            onClick={handleLogin}
+            disabled={loading}
+            type="submit"
+          />
 
           <p className="text">Not registered yet? Then Click below</p>
 

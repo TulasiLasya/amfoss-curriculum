@@ -1,0 +1,246 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  width: 100%;
+}
+
+.playlist-container {
+  display: grid;
+  max-width: max-content;
+  margin-right: auto;
+  margin-left: auto;
+  margin: auto;
+  padding: 20px;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .playlist-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.playlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  gap: 10rem;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed white;
+}
+
+.playlist-header h1 {
+  color: white;
+  font-size: 2.4rem;
+}
+
+.create-playlist-btn {
+  color: white;
+  text-decoration: none;
+}
+
+.bg {
+  background: linear-gradient(90deg, rgb(236, 173, 173), rgb(249, 117, 117));
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.playlists-grid {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.playlist-card {
+  display: flex;
+  padding: 30px;
+  background: linear-gradient(to right, rgb(255, 169, 169), rgb(255, 107, 206));
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.playlist-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.song-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.playlist-card-info {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 40px;
+}
+
+.playlist-card-name {
+  font-family: Arial;
+  margin-top: 20px;
+  color: white;
+}
+
+.playlist-card-count {
+  color: white;
+  font-size: 1rem;
+}
+
+.no-image-placeholder {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.playlist-songs-section {
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+}
+
+.songs-title {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: black;
+  font-weight: 500;
+}
+
+.mini-songs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mini-song-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.mini-song-item:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+  border-color: pink;
+}
+
+.mini-song-thumbnail {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.mini-song-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-song-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.mini-song-artist {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.mini-song-number {
+  font-size: 0.8rem;
+  color: #999;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.mini-delete-btn {
+  background: none;
+  border: none;
+  color: #ff4444;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+}
+
+.delete-playlist-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 68, 68, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.delete-playlist-btn:hover {
+  background: #ff0000;
+  transform: scale(1.1);
+}
+
+.empty-playlist {
+  text-align: center;
+  padding: 40px;
+  color: black;
+  font-style: italic;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #1db954;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

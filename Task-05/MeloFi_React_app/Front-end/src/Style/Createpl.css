@@ -18,3 +18,21 @@ body {
   height: 100%;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    width: 250px;
+    height: 100vh;
+    transition: left 0.3s; /* for smooth navi*/
+  }
+  .menu.open {
+    left: 0;
+  }
+  .content-pl {
+    margin-left: 0;
+    padding: 15px;
+  }
+}

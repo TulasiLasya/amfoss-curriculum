@@ -1,0 +1,72 @@
+.box3 {
+  max-width: 100%;
+  background: linear-gradient(90deg, rgb(236, 173, 173), rgb(249, 117, 117));
+}
+
+.Profilepic{
+  margin: 20px;
+}
+
+.info-row {
+  padding: 20px;
+  background: transparent;
+  border-radius: 50px;
+  font-family: "arial";
+  width:max-content;
+}
+
+.info-row strong {
+  color: black;
+  margin-right: 10px;
+  min-width: 80px;
+  display: inline-block;
+}
+
+.bio-section {
+  padding: 10px;
+  background: transparent;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  width:auto;
+}
+
+.bio-section strong {
+  color:black ;
+  font-family: arial;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.bio-text {
+  margin: 5px;
+  color: white;
+  line-height: 2;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: arial;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 18px;
+}
+
+.error-message {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.success-message {
+  background: #c6f6d5;
+  color: #22543d;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+}
