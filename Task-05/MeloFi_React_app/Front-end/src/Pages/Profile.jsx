@@ -4,8 +4,7 @@ import account from "../assets/account.png";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Style/Profile.css";
-import { useAuth } from "../Context/AuthContext";  
-
+import { useAuth } from "../Context/AuthContext";
 
 function Profile() {
   const navigate = useNavigate();
@@ -19,26 +18,25 @@ function Profile() {
   const [editedBio, setEditedBio] = useState("");
 
   useEffect(() => {
-  if (authLoading) return; // wait for auth to load
+    if (authLoading) return; // wait for auth to load
 
-  if (!currentUser) {
-    navigate("/dashboard"); // no user then redirect
-    return;
-  }
+    if (!currentUser) {
+      navigate("/dashboard"); // no user then redirect
+      return;
+    }
 
-  // user exists -- set initial data and fetch fresh profile
-  setUser(currentUser);
-  setEditedBio(currentUser.bio || "");
-  fetchUserProfile(currentUser.id);
-}, [authLoading, currentUser, navigate]);
-
+    // user exists -- set initial data and fetch fresh profile
+    setUser(currentUser);
+    setEditedBio(currentUser.bio || "");
+    fetchUserProfile(currentUser.id);
+  }, [authLoading, currentUser, navigate]);
 
   const fetchUserProfile = async (userId) => {
     try {
       console.log("Fetching profile for userId:", userId);
-      const response = await fetch(`http://localhost:5555/profile/${userId}`);
+      const response = await fetch(`http://localhost:8000/profile/${userId}`);
       const data = await response.json();
-     // console.log("Profile response:", data); // Debug log
+      // console.log("Profile response:", data); // Debug log
 
       if (!response.ok) {
         throw new Error(data.error || "Failed to fetch profile");
@@ -55,7 +53,6 @@ function Profile() {
     }
   };
 
-
   const handleSaveBio = async () => {
     setLoading(true);
     setError("");
@@ -63,16 +60,18 @@ function Profile() {
 
     try {
       // console.log("Saving bio for userId:", userId, "Bio:", editedBio); // Debug log
-      const response = await fetch(`http://localhost:5555/profile/${currentUser.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `http://localhost:8000/profile/${currentUser.id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            bio: editedBio,
+          }),
         },
-        body: JSON.stringify({
-          bio: editedBio,
-        }),
-      });
-
+      );
 
       const data = await response.json();
       // console.log("Save response:", data); // DEBUG LOG
@@ -151,7 +150,7 @@ function Profile() {
         {/* Display details */}
         <div className="info-row">
           {/* ?. will give it as undefined instead of givving errors and crashing */}
-          <strong>Username:</strong> {user?.username} 
+          <strong>Username:</strong> {user?.username}
         </div>
         <br />
         <div className="info-row">

@@ -38,7 +38,7 @@ function Searchpage() {
       // Make API call to your backend search endpoint
       // fetch(url) is used to request to retrieve a resource from the url
       const response = await fetch(
-        `http://localhost:5555/search/songs?q=${encodeURIComponent(query)}`,
+        `http://localhost:8000/search/songs?q=${encodeURIComponent(query)}`,
       );
       const data = await response.json();
 
@@ -61,7 +61,8 @@ function Searchpage() {
     } catch (err) {
       setError(err.message);
       setSearchResults([]);
-    } finally { // finally block runs even it is failed or succeeded.
+    } finally {
+      // finally block runs even it is failed or succeeded.
       // it ensures that the Searching text disapperas whether it worked or failed.
       setLoading(false); // it will not show the loading.. txt.
     }
@@ -88,7 +89,7 @@ function Searchpage() {
           <div className="content">
             <div className="search-con">
               <Searchbar onSearch={handleSearch} initialValue={searchQuery} />
-              
+
               {/* Search Results Section */}
               <div className="search-results">
                 {loading && <div className="loading">Searching...</div>}

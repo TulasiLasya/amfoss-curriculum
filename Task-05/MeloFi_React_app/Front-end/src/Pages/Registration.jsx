@@ -37,13 +37,13 @@ function Registration() {
     try {
       //  trying to send data to backend
 
-      const response = await fetch("http://localhost:5555/users", {
+      const response = await fetch("http://localhost:8000/users", {
         method: "POST",
-        // for creating new users POST is used here. 
+        // for creating new users POST is used here.
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(Data), 
+        body: JSON.stringify(Data),
         // JSON.stringify(Data) is used to convert a js value ( array or obj) into json-string format.
       });
 
@@ -59,8 +59,8 @@ function Registration() {
         setError(data.error || "Registration failed");
       }
     } catch (err) {
-      // what if we got errors then 
-      
+      // what if we got errors then
+
       setError("Server error. Please try again.");
       console.error("Registration error:", err);
     } finally {
@@ -86,7 +86,7 @@ function Registration() {
             onChange={handleChange}
           />
           <br></br>
-          <div >
+          <div>
             {/* Connects email input to the state and updates the changes occured in the email in the state */}
             <Email value={Data.email} onChange={handleChange} />
           </div>

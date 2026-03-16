@@ -13,8 +13,7 @@ function Home() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const {login } = useAuth();
-
+  const { login } = useAuth();
 
   //  async ==> allows systems to send and recive data without waiting for an immediate responceponce.
   const handleLogin = async (e) => {
@@ -27,7 +26,7 @@ function Home() {
 
     try {
       //  this await makes the async function to stop until the fetching finishes
-      const responce = await fetch("http://localhost:5555/login", {
+      const responce = await fetch("http://localhost:8000/login", {
         // the above link is from backend , it is usefull to check login details.(we are connecting them here)
         method: "POST",
         headers: {

@@ -12,7 +12,7 @@ function Resetpage() {
   const [email, setEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  
+
   // react will updates the ui based state changes.
   const [loading, setLoading] = useState(false); // it will not load if we open the page, so for that we kept false.
   const [error, setError] = useState("");
@@ -35,7 +35,7 @@ function Resetpage() {
     setSuccess("");
 
     try {
-      const response = await fetch("http://localhost:5555/reset-password", {
+      const response = await fetch("http://localhost:8000/reset-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -110,7 +110,6 @@ function Resetpage() {
             {success}
           </div>
         )}
-
 
         <Email value={email} onChange={handleEmailChange} />
         <br />
