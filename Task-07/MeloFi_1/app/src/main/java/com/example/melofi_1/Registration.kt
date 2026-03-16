@@ -1,5 +1,6 @@
 package com.example.melofi_1
 
+import android.R.attr.end
 import android.R.attr.onClick
 import android.util.Log
 import androidx.compose.foundation.Image
@@ -15,8 +16,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -34,62 +33,62 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.navOptions
 
 
 @Composable
-fun LoginScreen(navController: NavController, authViewModel: AuthViewModel = viewModel()) {
+fun RegistrationScreen(navController: NavController, authViewModel: AuthViewModel = viewModel()) {
+
+    var username by remember { mutableStateOf("") }
 
     var email by remember { mutableStateOf("") }
 
     var password by remember { mutableStateOf("") }
+
     var passwordVisible by remember { mutableStateOf(false) }
 
-    val isLoading by authViewModel.loginLoading.collectAsState()
-    val error by authViewModel.loginError.collectAsState()
-    val success by authViewModel.loginSuccess.collectAsState()
 
+    val isLoading by authViewModel.registerLoading.collectAsState()
+    val error by authViewModel.registerError.collectAsState()
+    val success by authViewModel.registerSuccess.collectAsState()
 
     val gradientBrush = Brush.linearGradient(
-        0.0f to Color.Black,
-        0.25f to Color.Black, // Still black at the middle
-        1.0f to Color(0xFFFFA9A9), // Transition complete at bottom
+
+        0.0f to Color(0xFFFF6060), 0.05f to Color(0xFFFF6060), // Still black at the middle
+        1.0f to Color.Black, // Transition complete at bottom
         start = Offset(0f, 0f), // Top
         end = Offset(0f, Float.POSITIVE_INFINITY) // Bottom
     )
+
+
     LaunchedEffect(success) {
         if (success) {
             authViewModel.resetStates()
-            navController.navigate(Screen.Dashboard.route) {
-                popUpTo(Screen.Login.route) { inclusive = true }
-            }
+            navController.navigate(Screen.Login.route)
         }
     }
-
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(gradientBrush)
     ) {
-
         Column(
-            modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.music),
-                contentDescription = "music image",
-                modifier = Modifier.size(50.dp)
-            )
 
-            Spacer(modifier = Modifier.height(16.dp))
+
+            //Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "MeloFi",
+                text = "Registration",
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White
@@ -97,14 +96,13 @@ fun LoginScreen(navController: NavController, authViewModel: AuthViewModel = vie
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(text = "Login to your Account", color = Color.White)
-
-            Spacer(modifier = Modifier.height(16.dp))
+            Text(text = "Create a account", color = Color.White)
 
             OutlinedTextField(
-                value = email,
-                onValueChange = { email = it },
-                label = { Text(text = "Email-Id") },
+                value = username,
+                onValueChange = { username = it },
+                label = @androidx.compose.runtime.Composable { Text(text = "Username") },
+                enabled = !isLoading,
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = Color.White,
                     unfocusedBorderColor = Color.White,
@@ -112,7 +110,27 @@ fun LoginScreen(navController: NavController, authViewModel: AuthViewModel = vie
                     unfocusedPlaceholderColor = Color.White,
                     focusedLabelColor = Color.White,
                     unfocusedLabelColor = Color.White,
-                    focusedSupportingTextColor = Color.White,
+                    cursorColor = Color.White,
+                    focusedTextColor = Color.White,
+                    unfocusedTextColor = Color.White
+
+                )
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            OutlinedTextField(
+                value = email,
+                onValueChange = { email = it },
+                enabled = !isLoading,
+                label = @androidx.compose.runtime.Composable { Text(text = "Email-Id") },
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedBorderColor = Color.White,
+                    unfocusedBorderColor = Color.White,
+                    focusedPlaceholderColor = Color.White,
+                    unfocusedPlaceholderColor = Color.White,
+                    focusedLabelColor = Color.White,
+                    unfocusedLabelColor = Color.White,
                     cursorColor = Color.White,
                     focusedTextColor = Color.White,
                     unfocusedTextColor = Color.White
@@ -126,19 +144,8 @@ fun LoginScreen(navController: NavController, authViewModel: AuthViewModel = vie
                 value = password,
                 onValueChange = { password = it },
                 label = { Text(text = "Password") },
-                visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-                trailingIcon = {
-                    IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                        Icon(
-                            painter = painterResource(
-                                id = if (passwordVisible) R.drawable.visibility_off else R.drawable.visibility
-                            ),
-                            contentDescription = if (passwordVisible) "Hide password" else "Show password",
-                            tint = Color.White
-                        )
-                    }
-                },
-
+                enabled = !isLoading,
+                visualTransformation = PasswordVisualTransformation(),
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = Color.White,
                     unfocusedBorderColor = Color.White,
@@ -155,59 +162,43 @@ fun LoginScreen(navController: NavController, authViewModel: AuthViewModel = vie
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(text = "Forgot Password?", modifier = Modifier.clickable { }, color = Color.White)
+            //Text(text = "Forgot Password?", modifier = Modifier.clickable { }, color = Color.White)
 
-            error?.let {
-                Spacer(modifier = Modifier.height(16.dp))
-                Text(
-                    text = it,
-                    color = Color.Red,
-                    fontSize = 14.sp
-                )
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
+            //Spacer(modifier = Modifier.height(16.dp))
             //Log.i("Credential", "Email $email Password: $password"
             Button(
                 onClick = {
-                    authViewModel.login(email, password) },
-                enabled =!isLoading && email.isNotBlank() && password.isNotBlank(),
-
+                    println("🎯 Sign Up clicked")
+                    authViewModel.register(username, email, password)
+                },
+                enabled = !isLoading && username.isNotBlank() && email.isNotBlank() && password.isNotBlank(),
 
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.White, contentColor = Color.Black,
-                    disabledContainerColor = Color.Gray
+                    containerColor = Color.White,
+                    contentColor = Color.Black,
+                    disabledContentColor = Color.Gray,
+                    disabledContainerColor = Color.DarkGray
                 )
             ) {
                 if (isLoading) {
                     CircularProgressIndicator(
-                        color = Color.Black,
-                        modifier = Modifier.size(24.dp)
+                        color = Color.Black, modifier = Modifier.size(24.dp)
                     )
                 } else {
-                    Text(text = "Login")
+                    Text(text = "Sign Up")
                 }
             }
-
-
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "Not Registered yet? click below",
-                modifier = Modifier.clickable { },
+                text = "Already had account? Login",
+                modifier = Modifier.clickable { navController.navigate(Screen.Login.route) },
                 color = Color.White
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
-
-            Button(
-                onClick = { navController.navigate(route = Screen.Registration.route) },
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.White, contentColor = Color.Black
-                )
-            ) { Text(text = "SignUp") }
 
         }
     }
 }
+
 
